@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Cricket Survey & Registration</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f0f4f8; display: flex; justify-content: center; padding: 20px; }
+    .container { background: #fff; padding: 25px 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 450px; width: 100%; }
+    h2 { text-align: center; color: #1b5e20; margin-top: 0; }
+    label { display: block; margin-top: 15px; font-weight: 600; color: #333; }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+    }
+    .options { margin-top: 8px; }
+    .options label { display: inline-block; font-weight: normal; margin-right: 15px; margin-top: 5px; }
+    button {
+      width: 100%; padding: 12px; background: #2e7d32; color: white; border: none; border-radius: 5px;
+      font-size: 16px; font-weight: bold; margin-top: 20px; cursor: pointer;
+    }
+    button:hover { background: #1b5e20; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>🏏 Student Cricket Survey</h2>
+  <form onsubmit="event.preventDefault(); alert('Thank you! Your registration & survey have been submitted.'); this.reset();">
+    
+    <label for="name">Full Name *</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="id">Student ID / Roll No *</label>
+    <input type="text" id="id" placeholder="e.g., STU1024" required>
+
+    <label for="email">College Email *</label>
+    <input type="email" id="email" placeholder="student@university.edu" required>
+
+    <label for="role">Primary Playing Role</label>
+    <select id="role">
+      <option value="batsman">Batsman</option>
+      <option value="bowler">Bowler</option>
+      <option value="all-rounder">All-Rounder</option>
+      <option value="wicket-keeper">Wicket-Keeper</option>
+      <option value="fan">Just a Fan / Spectator</option>
+    </select>
+
+    <label>Favorite Cricket Format</label>
+    <div class="options">
+      <label><input type="radio" name="format" value="T20" checked> T20</label>
+      <label><input type="radio" name="format" value="ODI"> ODI</label>
+      <label><input type="radio" name="format" value="Test"> Test</label>
+    </div>
+
+    <label>Preferred Practice Days</label>
+    <div class="options">
+      <label><input type="checkbox" name="days" value="Mon-Wed"> Mon–Wed</label>
+      <label><input type="checkbox" name="days" value="Thu-Fri"> Thu–Fri</label>
+      <label><input type="checkbox" name="days" value="Weekends"> Weekends</label>
+    </div>
+
+    <label for="comments">Favorite Player or Suggestions</label>
+    <textarea id="comments" rows="3" placeholder="Tell us your favorite cricketer or team ideas..."></textarea>
+
+    <button type="submit">Register & Submit Survey</button>
+  </form>
+</div>
+
+</body>
+</html>
